@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "promotionInfo": {
+      "home": {
+        "title": "Promotion Infos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Promotion Info",
+        "createOrEditLabel": "สร้างหรือแก้ไข Promotion Info",
+        "notFound": "No Promotion Infos found"
+      },
+      "created": "Promotion Info ถูกสร้างด้วย {{ param }}",
+      "updated": "Promotion Info ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Promotion Info ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Promotion Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Promotion Info"
+      },
+      "id": "ID",
+      "promotion": "Promotion",
+      "product": "Product"
+    }
+  }
+}

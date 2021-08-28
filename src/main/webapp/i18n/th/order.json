@@ -1,0 +1,32 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Order",
+        "createOrEditLabel": "สร้างหรือแก้ไข Order",
+        "notFound": "No Orders found"
+      },
+      "created": "Order ถูกสร้างด้วย {{ param }}",
+      "updated": "Order ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Order ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "id": "ID",
+      "customerName": "Customer Name",
+      "orderAddress": "Order Address",
+      "totalAmount": "Total Amount",
+      "omiseTxnId": "Omise Txn Id",
+      "txnTimeStamp": "Txn Time Stamp",
+      "isTxnSuccess": "Is Txn Success",
+      "createAt": "Create At",
+      "modifyAt": "Modify At",
+      "orderInfo": "Order Info"
+    }
+  }
+}

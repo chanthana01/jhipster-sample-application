@@ -1,0 +1,79 @@
+entity CustomerDetails {
+    phone String required
+    addressLine1 String required
+    addressLine2 String
+    city String required
+    country String required
+}
+
+entity Product {
+	code String required
+	category String required
+	name String required
+	family String required 
+	detail1 String
+	detail2 String
+	price BigDecimal required
+    createAt ZonedDateTime required
+    modifyAt ZonedDateTime required
+}
+
+entity Inventory {
+    unit Integer required
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Order {
+	customerName String required
+	orderAddress String required
+	totalAmount BigDecimal required
+	omiseTxnId String required
+	txnTimeStamp ZonedDateTime required
+	isTxnSuccess Boolean required
+    createAt ZonedDateTime required
+    modifyAt ZonedDateTime required
+}
+
+entity OrderInfo {
+    quantity Integer required
+    pricePerUnit BigDecimal required
+    createAt ZonedDateTime required
+    modifyAt ZonedDateTime required
+    
+}
+
+entity Promotion {
+    promotionDescription String required
+    promorionFormular String required
+    expireAt ZonedDateTime
+    createAt ZonedDateTime required
+    modifyAt ZonedDateTime required
+}
+
+entity PromotionInfo {
+   
+}
+
+relationship OneToOne {
+	Product{inventory} to Inventory
+    Inventory{product(id) } to Product
+    OrderInfo{promotionInfo(id) } to PromotionInfo
+    OrderInfo{product(id) } to Product
+    CustomerDetails{user(login) required} to User
+}
+
+relationship OneToMany {
+	Order{orderInfo(id) } to OrderInfo
+    Promotion{promotionInfo(id) } to PromotionInfo
+    Product{promotionInfo(id)} to  PromotionInfo
+}
+paginate Product with pagination
+paginate Order with pagination
+paginate OrderInfo with pagination
+paginate Promotion with pagination
+paginate PromotionInfo with pagination
+service all with serviceClass 
+
+
+

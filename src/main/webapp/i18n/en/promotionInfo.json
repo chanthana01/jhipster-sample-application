@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "promotionInfo": {
+      "home": {
+        "title": "Promotion Infos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Promotion Info",
+        "createOrEditLabel": "Create or edit a Promotion Info",
+        "notFound": "No Promotion Infos found"
+      },
+      "created": "A new Promotion Info is created with identifier {{ param }}",
+      "updated": "A Promotion Info is updated with identifier {{ param }}",
+      "deleted": "A Promotion Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Promotion Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Promotion Info"
+      },
+      "id": "ID",
+      "promotion": "Promotion",
+      "product": "Product"
+    }
+  }
+}

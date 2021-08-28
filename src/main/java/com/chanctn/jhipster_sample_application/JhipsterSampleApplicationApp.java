@@ -31,7 +31,7 @@ public class JhipsterSampleApplicationApp {
     }
 
     /**
-     * Initializes jhipsterSampleApplication.
+     * Initializes jhipster_sample_application.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>

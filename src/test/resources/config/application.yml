@@ -18,43 +18,23 @@ spring:
     # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
     #active: testcontainers
   application:
-    name: jhipsterSampleApplication
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:jhipstersampleapplication;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    name:
-    username:
-    password:
-    hikari:
-      auto-commit: false
+    name: jhipster_sample_application
   jackson:
     serialization:
       write-durations-as-timestamps: false
-  jpa:
-    database-platform: tech.jhipster.domain.util.FixedH2Dialect
-    open-in-view: false
-    hibernate:
-      ddl-auto: none
-      naming:
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-    properties:
-      hibernate.id.new_generator_mappings: true
-      hibernate.connection.provider_disables_autocommit: true
-      hibernate.cache.use_second_level_cache: false
-      hibernate.cache.use_query_cache: false
-      hibernate.generate_statistics: false
-      hibernate.hbm2ddl.auto: validate
-      hibernate.jdbc.time_zone: UTC
-      hibernate.query.fail_on_pagination_over_collection_fetch: true
   liquibase:
     contexts: test
+    url: jdbc:h2:mem:jhipster_sample_application;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
   mail:
     host: localhost
   main:
     allow-bean-definition-overriding: true
   messages:
     basename: i18n/messages
+  r2dbc:
+    url: r2dbc:h2:mem:///jhipster_sample_application;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: r2dbc
+    password:
   task:
     execution:
       thread-name-prefix: jhipster-sample-application-task-
@@ -97,7 +77,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: ZDI2MWI4NzE3MDUzMDQ5ZDFlZDVjODBmYmZhOGJiZWZhYWEzZjllMWRhMGNiNThkZWJhMWE1MWI1MDA0YzBlOGJlMjdjMGQ3NGJmMjkxNzc2MmJlNTk1Y2UyMGZhMWEyM2VkMWQ2MTZjZjdhNzA5NTkzMzczZjdmZjc1Njk2NzU=
+        base64-secret: ZGU5MDI0MmU3OTliZWRjZTZkZDQzMjNhZWQ2ZmJlOWI5YzMwMThlMGEwMjdlZTJlNDg1YWMwYzljZDFjOWY2ODMyOTIzYTMwMDliNmJkY2JkNDU4YmUzZTU3ZTEyYmNkZGNjYWMwMWFhOWYwNDUyZTRiNTI0NGY5OGRkZjkwMjU=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
 # ===================================================================

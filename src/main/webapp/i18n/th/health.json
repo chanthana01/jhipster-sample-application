@@ -16,7 +16,7 @@
       "livenessState": "Liveness state",
       "readinessState": "Readiness state",
       "ping": "Application",
-      "db": "ฐานข้อมูล"
+      "r2dbc": "ฐานข้อมูล"
     },
     "table": {
       "service": "เซอร์วิส",

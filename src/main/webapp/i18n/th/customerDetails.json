@@ -1,0 +1,29 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "customerDetails": {
+      "home": {
+        "title": "Customer Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Customer Details",
+        "createOrEditLabel": "สร้างหรือแก้ไข Customer Details",
+        "notFound": "No Customer Details found"
+      },
+      "created": "Customer Details ถูกสร้างด้วย {{ param }}",
+      "updated": "Customer Details ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Customer Details ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Customer Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Details"
+      },
+      "id": "ID",
+      "phone": "Phone",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "city": "City",
+      "country": "Country",
+      "user": "User"
+    }
+  }
+}

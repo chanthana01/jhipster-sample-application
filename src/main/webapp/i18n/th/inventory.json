@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "inventory": {
+      "home": {
+        "title": "Inventories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Inventory",
+        "createOrEditLabel": "สร้างหรือแก้ไข Inventory",
+        "notFound": "No Inventories found"
+      },
+      "created": "Inventory ถูกสร้างด้วย {{ param }}",
+      "updated": "Inventory ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Inventory ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Inventory {{ id }}?"
+      },
+      "detail": {
+        "title": "Inventory"
+      },
+      "id": "ID",
+      "unit": "Unit",
+      "product": "Product"
+    }
+  }
+}

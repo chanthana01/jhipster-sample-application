@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "orderInfo": {
+      "home": {
+        "title": "Order Infos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Order Info",
+        "createOrEditLabel": "Create or edit a Order Info",
+        "notFound": "No Order Infos found"
+      },
+      "created": "A new Order Info is created with identifier {{ param }}",
+      "updated": "A Order Info is updated with identifier {{ param }}",
+      "deleted": "A Order Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Info"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "pricePerUnit": "Price Per Unit",
+      "createAt": "Create At",
+      "modifyAt": "Modify At",
+      "promotionInfo": "Promotion Info",
+      "product": "Product",
+      "order": "Order"
+    }
+  }
+}

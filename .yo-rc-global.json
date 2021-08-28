@@ -1,0 +1,8 @@
+{
+  "generator-jhipster:7.1.0": {
+    "promptValues": {
+      "packageName": "com.chanctn.jhipster_sample_application",
+      "nativeLanguage": "en"
+    }
+  }
+}

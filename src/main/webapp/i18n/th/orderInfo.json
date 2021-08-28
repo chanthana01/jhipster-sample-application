@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "orderInfo": {
+      "home": {
+        "title": "Order Infos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Order Info",
+        "createOrEditLabel": "สร้างหรือแก้ไข Order Info",
+        "notFound": "No Order Infos found"
+      },
+      "created": "Order Info ถูกสร้างด้วย {{ param }}",
+      "updated": "Order Info ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Order Info ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Order Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Info"
+      },
+      "id": "ID",
+      "quantity": "Quantity",
+      "pricePerUnit": "Price Per Unit",
+      "createAt": "Create At",
+      "modifyAt": "Modify At",
+      "promotionInfo": "Promotion Info",
+      "product": "Product",
+      "order": "Order"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "PromotionInfo",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "promotion",
+      "otherEntityRelationshipName": "promotionInfo",
+      "relationshipName": "promotion"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "promotionInfo",
+      "relationshipName": "product"
+    }
+  ],
+  "entityTableName": "promotion_info",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210828095149"
+}

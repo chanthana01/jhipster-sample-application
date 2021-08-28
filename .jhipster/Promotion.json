@@ -1,0 +1,48 @@
+{
+  "name": "Promotion",
+  "fields": [
+    {
+      "fieldName": "promotionDescription",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "promorionFormular",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "expireAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "modifyAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "promotionInfo",
+      "otherEntityRelationshipName": "promotion",
+      "relationshipName": "promotionInfo",
+      "otherEntityField": "id"
+    }
+  ],
+  "entityTableName": "promotion",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210828095148"
+}
