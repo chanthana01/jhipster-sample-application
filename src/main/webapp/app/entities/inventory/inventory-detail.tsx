@@ -35,10 +35,6 @@ export const InventoryDetail = (props: RouteComponentProps<{ id: string }>) => {
             </span>
           </dt>
           <dd>{inventoryEntity.unit}</dd>
-          <dt>
-            <Translate contentKey="jhipsterSampleApplicationApp.inventory.product">Product</Translate>
-          </dt>
-          <dd>{inventoryEntity.product ? inventoryEntity.product.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/inventory" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

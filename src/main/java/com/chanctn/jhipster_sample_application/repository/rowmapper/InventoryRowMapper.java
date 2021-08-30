@@ -27,7 +27,6 @@ public class InventoryRowMapper implements BiFunction<Row, String, Inventory> {
         Inventory entity = new Inventory();
         entity.setId(converter.fromRow(row, prefix + "_id", Long.class));
         entity.setUnit(converter.fromRow(row, prefix + "_unit", Integer.class));
-        entity.setProductId(converter.fromRow(row, prefix + "_product_id", Long.class));
         return entity;
     }
 }

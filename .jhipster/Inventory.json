@@ -13,8 +13,7 @@
       "otherEntityName": "product",
       "otherEntityRelationshipName": "inventory",
       "relationshipName": "product",
-      "otherEntityField": "id",
-      "ownerSide": true
+      "ownerSide": false
     }
   ],
   "entityTableName": "inventory",

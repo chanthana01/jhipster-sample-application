@@ -47,7 +47,6 @@ export const InventoryUpdate = (props: RouteComponentProps<{ id: string }>) => {
     const entity = {
       ...inventoryEntity,
       ...values,
-      product: products.find(it => it.id.toString() === values.productId.toString()),
     };
 
     if (isNew) {
@@ -62,7 +61,6 @@ export const InventoryUpdate = (props: RouteComponentProps<{ id: string }>) => {
       ? {}
       : {
           ...inventoryEntity,
-          productId: inventoryEntity?.product?.id,
         };
 
   return (
@@ -101,22 +99,6 @@ export const InventoryUpdate = (props: RouteComponentProps<{ id: string }>) => {
                   validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
-              <ValidatedField
-                id="inventory-product"
-                name="productId"
-                data-cy="product"
-                label={translate('jhipsterSampleApplicationApp.inventory.product')}
-                type="select"
-              >
-                <option value="" key="0" />
-                {products
-                  ? products.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/inventory" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

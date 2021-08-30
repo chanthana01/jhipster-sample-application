@@ -15,10 +15,7 @@ import reactor.core.publisher.Mono;
 @SuppressWarnings("unused")
 @Repository
 public interface InventoryRepository extends R2dbcRepository<Inventory, Long>, InventoryRepositoryInternal {
-    @Query("SELECT * FROM inventory entity WHERE entity.product_id = :id")
-    Flux<Inventory> findByProduct(Long id);
-
-    @Query("SELECT * FROM inventory entity WHERE entity.product_id IS NULL")
+    @Query("SELECT * FROM inventory entity WHERE entity.id not in (select inventory_id from product)")
     Flux<Inventory> findAllWhereProductIsNull();
 
     // just to avoid having unambigous methods

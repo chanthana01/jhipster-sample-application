@@ -52,9 +52,6 @@ export const Inventory = (props: RouteComponentProps<{ url: string }>) => {
                 <th>
                   <Translate contentKey="jhipsterSampleApplicationApp.inventory.unit">Unit</Translate>
                 </th>
-                <th>
-                  <Translate contentKey="jhipsterSampleApplicationApp.inventory.product">Product</Translate>
-                </th>
                 <th />
               </tr>
             </thead>
@@ -67,7 +64,6 @@ export const Inventory = (props: RouteComponentProps<{ url: string }>) => {
                     </Button>
                   </td>
                   <td>{inventory.unit}</td>
-                  <td>{inventory.product ? <Link to={`product/${inventory.product.id}`}>{inventory.product.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${inventory.id}`} color="info" size="sm" data-cy="entityDetailsButton">

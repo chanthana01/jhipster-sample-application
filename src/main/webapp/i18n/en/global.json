@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "customerDetails": "Customer Details",
+        "product": "Product",
+        "inventory": "Inventory",
+        "order": "Order",
+        "orderInfo": "Order Info",
+        "promotion": "Promotion",
+        "promotionInfo": "Promotion Info",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

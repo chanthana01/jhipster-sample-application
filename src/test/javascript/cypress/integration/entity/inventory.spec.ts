@@ -99,8 +99,6 @@ describe('Inventory e2e test', () => {
 
     cy.get(`[data-cy="unit"]`).type('86254').should('have.value', '86254');
 
-    cy.setFieldSelectToLastOfEntity('product');
-
     cy.get(entityCreateSaveButtonSelector).click({ force: true });
     cy.scrollTo('top', { ensureScrollable: false });
     cy.get(entityCreateSaveButtonSelector).should('not.exist');
