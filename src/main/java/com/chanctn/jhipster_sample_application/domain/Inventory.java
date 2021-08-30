@@ -23,8 +23,6 @@ public class Inventory implements Serializable {
     @Column("unit")
     private Integer unit;
 
-    private Long productId;
-
     @Transient
     private Product product;
 
@@ -61,21 +59,17 @@ public class Inventory implements Serializable {
 
     public Inventory product(Product product) {
         this.setProduct(product);
-        this.productId = product != null ? product.getId() : null;
         return this;
     }
 
     public void setProduct(Product product) {
+        if (this.product != null) {
+            this.product.setInventory(null);
+        }
+        if (product != null) {
+            product.setInventory(this);
+        }
         this.product = product;
-        this.productId = product != null ? product.getId() : null;
-    }
-
-    public Long getProductId() {
-        return this.productId;
-    }
-
-    public void setProductId(Long product) {
-        this.productId = product;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

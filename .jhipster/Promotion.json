@@ -31,8 +31,7 @@
       "relationshipType": "one-to-many",
       "otherEntityName": "promotionInfo",
       "otherEntityRelationshipName": "promotion",
-      "relationshipName": "promotionInfo",
-      "otherEntityField": "id"
+      "relationshipName": "promotionInfo"
     }
   ],
   "entityTableName": "promotion",

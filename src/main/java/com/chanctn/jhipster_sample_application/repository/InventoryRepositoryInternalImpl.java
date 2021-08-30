@@ -5,7 +5,6 @@ import static org.springframework.data.relational.core.query.Query.query;
 
 import com.chanctn.jhipster_sample_application.domain.Inventory;
 import com.chanctn.jhipster_sample_application.repository.rowmapper.InventoryRowMapper;
-import com.chanctn.jhipster_sample_application.repository.rowmapper.ProductRowMapper;
 import com.chanctn.jhipster_sample_application.service.EntityManager;
 import io.r2dbc.spi.Row;
 import io.r2dbc.spi.RowMetadata;
@@ -21,7 +20,7 @@ import org.springframework.data.relational.core.query.Criteria;
 import org.springframework.data.relational.core.sql.Column;
 import org.springframework.data.relational.core.sql.Expression;
 import org.springframework.data.relational.core.sql.Select;
-import org.springframework.data.relational.core.sql.SelectBuilder.SelectFromAndJoinCondition;
+import org.springframework.data.relational.core.sql.SelectBuilder.SelectFromAndJoin;
 import org.springframework.data.relational.core.sql.Table;
 import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.r2dbc.core.RowsFetchSpec;
@@ -38,22 +37,14 @@ class InventoryRepositoryInternalImpl implements InventoryRepositoryInternal {
     private final R2dbcEntityTemplate r2dbcEntityTemplate;
     private final EntityManager entityManager;
 
-    private final ProductRowMapper productMapper;
     private final InventoryRowMapper inventoryMapper;
 
     private static final Table entityTable = Table.aliased("inventory", EntityManager.ENTITY_ALIAS);
-    private static final Table productTable = Table.aliased("product", "product");
 
-    public InventoryRepositoryInternalImpl(
-        R2dbcEntityTemplate template,
-        EntityManager entityManager,
-        ProductRowMapper productMapper,
-        InventoryRowMapper inventoryMapper
-    ) {
+    public InventoryRepositoryInternalImpl(R2dbcEntityTemplate template, EntityManager entityManager, InventoryRowMapper inventoryMapper) {
         this.db = template.getDatabaseClient();
         this.r2dbcEntityTemplate = template;
         this.entityManager = entityManager;
-        this.productMapper = productMapper;
         this.inventoryMapper = inventoryMapper;
     }
 
@@ -69,14 +60,7 @@ class InventoryRepositoryInternalImpl implements InventoryRepositoryInternal {
 
     RowsFetchSpec<Inventory> createQuery(Pageable pageable, Criteria criteria) {
         List<Expression> columns = InventorySqlHelper.getColumns(entityTable, EntityManager.ENTITY_ALIAS);
-        columns.addAll(ProductSqlHelper.getColumns(productTable, "product"));
-        SelectFromAndJoinCondition selectFrom = Select
-            .builder()
-            .select(columns)
-            .from(entityTable)
-            .leftOuterJoin(productTable)
-            .on(Column.create("product_id", entityTable))
-            .equals(Column.create("id", productTable));
+        SelectFromAndJoin selectFrom = Select.builder().select(columns).from(entityTable);
 
         String select = entityManager.createSelect(selectFrom, Inventory.class, pageable, criteria);
         String alias = entityTable.getReferenceName().getReference();
@@ -109,7 +93,6 @@ class InventoryRepositoryInternalImpl implements InventoryRepositoryInternal {
 
     private Inventory process(Row row, RowMetadata metadata) {
         Inventory entity = inventoryMapper.apply(row, "e");
-        entity.setProduct(productMapper.apply(row, "product"));
         return entity;
     }
 
@@ -149,7 +132,6 @@ class InventorySqlHelper {
         columns.add(Column.aliased("id", table, columnPrefix + "_id"));
         columns.add(Column.aliased("unit", table, columnPrefix + "_unit"));
 
-        columns.add(Column.aliased("product_id", table, columnPrefix + "_product_id"));
         return columns;
     }
 }

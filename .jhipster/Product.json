@@ -57,8 +57,7 @@
       "relationshipType": "one-to-many",
       "otherEntityName": "promotionInfo",
       "otherEntityRelationshipName": "product",
-      "relationshipName": "promotionInfo",
-      "otherEntityField": "id"
+      "relationshipName": "promotionInfo"
     }
   ],
   "entityTableName": "product",

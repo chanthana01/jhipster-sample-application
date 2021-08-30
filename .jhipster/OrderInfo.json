@@ -28,7 +28,6 @@
       "otherEntityName": "promotionInfo",
       "otherEntityRelationshipName": "orderInfo",
       "relationshipName": "promotionInfo",
-      "otherEntityField": "id",
       "ownerSide": true
     },
     {
@@ -36,7 +35,6 @@
       "otherEntityName": "product",
       "otherEntityRelationshipName": "orderInfo",
       "relationshipName": "product",
-      "otherEntityField": "id",
       "ownerSide": true
     },
     {

@@ -3,6 +3,8 @@ package com.chanctn.jhipster_sample_application.service;
 import com.chanctn.jhipster_sample_application.domain.Inventory;
 import com.chanctn.jhipster_sample_application.repository.InventoryRepository;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -68,6 +70,16 @@ public class InventoryService {
     public Flux<Inventory> findAll() {
         log.debug("Request to get all Inventories");
         return inventoryRepository.findAll();
+    }
+
+    /**
+     *  Get all the inventories where Product is {@code null}.
+     *  @return the list of entities.
+     */
+    @Transactional(readOnly = true)
+    public Flux<Inventory> findAllWhereProductIsNull() {
+        log.debug("Request to get all inventories where Product is null");
+        return inventoryRepository.findAllWhereProductIsNull();
     }
 
     /**

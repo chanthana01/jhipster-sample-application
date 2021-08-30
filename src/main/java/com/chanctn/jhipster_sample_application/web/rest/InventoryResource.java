@@ -173,10 +173,15 @@ public class InventoryResource {
     /**
      * {@code GET  /inventories} : get all the inventories.
      *
+     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of inventories in body.
      */
     @GetMapping("/inventories")
-    public Mono<List<Inventory>> getAllInventories() {
+    public Mono<List<Inventory>> getAllInventories(@RequestParam(required = false) String filter) {
+        if ("product-is-null".equals(filter)) {
+            log.debug("REST request to get all Inventorys where product is null");
+            return inventoryService.findAllWhereProductIsNull().collectList();
+        }
         log.debug("REST request to get all Inventories");
         return inventoryService.findAll().collectList();
     }

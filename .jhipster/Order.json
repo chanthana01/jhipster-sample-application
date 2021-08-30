@@ -47,8 +47,7 @@
       "relationshipType": "one-to-many",
       "otherEntityName": "orderInfo",
       "otherEntityRelationshipName": "order",
-      "relationshipName": "orderInfo",
-      "otherEntityField": "id"
+      "relationshipName": "orderInfo"
     }
   ],
   "javadoc": "not an ignored comment",
